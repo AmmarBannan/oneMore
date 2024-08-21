@@ -1,0 +1,141 @@
+.container{
+    width: 400px;
+    height: 400px;
+}
+
+.center{
+    top: 35%;
+    left: 35%;
+    background-color: rgb(199, 3, 3);
+    width:100px;
+    height: 100px;
+}
+.center:after{
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    width: 100%;
+    height: 100%;
+    background: rgb(254, 1, 1);
+    top: 0;
+    left: 0;
+ 
+}
+
+.up{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(18, 18, 193);
+    top: -100%;
+}
+.up:after{
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    width: 100%;
+    height: 100%;
+    background: rgb(28, 28, 249);
+    top: 0;
+    left: 0;
+ 
+}
+
+.down{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(114, 3, 114);
+    top: 100%;
+}
+.down:after{
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    width: 100%;
+    height: 100%;
+    background: rgb(173, 2, 173);
+    top: 0;
+    left: 0;
+ 
+}
+
+
+.right{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(160, 4, 35);
+    width: 100%;
+    height: 100%;
+}
+.right:after{
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    width: 100%;
+    height: 100%;
+    background: rgb(216, 14, 55);
+    top: 0;
+    left: 0;
+ 
+}
+.left{
+    position: absolute;
+    left: -100%;
+    background-color: rgb(180, 118, 4);
+    width: 100%;
+    height: 100%;
+}
+.left:after{
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    width: 100%;
+    height: 100%;
+    background: rgb(238, 155, 3);
+    top: 0;
+    left: 0;
+ 
+}
+.up_left{
+    position: absolute;
+    left:-100%;
+    top:-100%;
+    background-color:rgba(187, 122, 2, 0.326);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+    
+}
+.up_right{
+    position: absolute;
+    left:100%;
+    top:-100%;
+    background-color: rgba(0, 0, 255, 0.199);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    border-radius:0 100% 0 0;
+    
+}
+.down_left{
+    position: absolute;
+    left:-100%;
+    top:100%;
+    background-color: rgba(73, 1, 73, 0.351);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+    border-radius:0 0 0 100px;
+}
+.down_right{
+    position: absolute;
+    left:100%;
+    top:100%;
+    background-color: rgba(137, 2, 65, 0.355);
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    
+}

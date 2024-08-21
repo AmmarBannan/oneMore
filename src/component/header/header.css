@@ -1,0 +1,7 @@
+.header{
+    background: rgb(211 226 225 / 80%);
+    width: 90%;
+    min-height: 10vh;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 1%;
+}

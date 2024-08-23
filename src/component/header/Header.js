@@ -6,7 +6,14 @@ import Logo from '../logo/Logo';
 export default function Header() {
   return (
     <div className='header'>
-        <Logo/>
+      <div className='header_logo'>
+          <Logo/>
+      </div>
+      <div className='header_main'>
+        <nav></nav>
+      </div>
+      
     </div>
+    
   )
 }

@@ -1,7 +1,17 @@
 .header{
     background: rgb(211 226 225 / 80%);
     width: 90%;
-    min-height: 10vh;
+    height: fit-content;
     border-radius: 15px 15px 0 0;
     margin-bottom: 1%;
+    display: flex;
+    justify-content: space-around;
+}
+.header_logo{
+    width: 30%;
+}
+.header_main{
+    background-color: rgb(118, 118, 198);
+    width: 70%;
+    height: 100%;
 }

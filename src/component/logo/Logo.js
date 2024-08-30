@@ -4,10 +4,8 @@ import './logo.css'
 export default function Logo() {
     return (
         <div className='logo'>
-            <div className='logo_name'>
-                <span className='logo_name_1'>On</span>
-                <span className='logo_name_2'>eMo</span>
-                <span className='logo_name_3'>re</span>
+            <div className='logoNu'>
+                
             </div>
             
             <div className='logo_container'>

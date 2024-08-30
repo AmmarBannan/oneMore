@@ -6,12 +6,35 @@
     margin-bottom: 1%;
     display: flex;
     justify-content: space-around;
+    max-height: 20%;
 }
 .header_logo{
-    width: 30%;
+    width: 20%;
+    min-width: 200px;
 }
 .header_main{
     background-color: rgb(118, 118, 198);
-    width: 70%;
-    height: 100%;
+    width: 80%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav_header{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+.nav_header_list{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+.nav{
+    display: block;
+    line-height: 16.41px;
+    letter-spacing: .02em;
+    color: #000;
+    font-family: Roboto;
+    font-size: 14px;
 }

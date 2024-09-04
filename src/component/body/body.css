@@ -1,21 +1,36 @@
 .body{
     background: white;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    width: 90%;
+    width: 75%;
     margin-bottom: 1%;
     border-radius: 7px;
     height: fit-content;
+    padding: 3%;
+
 }
 
 .perfume_list{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .perfume_list_item{
-    width: 30%;
-    min-height: 100px;
+    width: 100px;
+    height: 100px;
     box-shadow: 11px 11px 18px 6px rgba(0,0,0,0.55);
     margin: 0 2% 2% 0;
-    border-radius: 5px;
+    border-radius: 100%;
     padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: min-height,width 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
 }
+.perfume_list_item:hover{
+    width: 150px;
+    min-height: 150px;
+    
+}
+

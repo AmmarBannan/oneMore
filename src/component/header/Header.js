@@ -7,28 +7,31 @@ export default function Header({category,written}) {
 
   return (
     <div className='header'>
-      <div className='header_logo'>
-          <Logo/>
-      </div>
-      <div className='header_main'>
-        <div>
-          <h4>Search Bar Example</h4>
-          <SearchBar category={category} value={written}/>
-        </div>
-        <nav className='nav_header'>
-          <ul className='nav_header_list'>
-            <li>filter</li>
-            <li>notifications</li>
-          </ul>
-        </nav>
-        <ul class="contacts list hide">
-          <li class="contacts__item"><a  class="contacts__item__link link" target="_parent" > <p>info@devstudion.com</p> </a></li>
-
-        </ul>
-
-     
-      </div>
       
+      
+
+        <div class="logo">
+            <a href="#"> <Logo/></a>
+        </div>
+        <div class="header-items">
+            <div class="search-bar">
+                <SearchBar className='searchBar' category={category} value={written} placeholder="b"/>
+            </div>
+            <div class="filter">
+                <select>
+                    <option value="">Filter</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                </select>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:contact@example.com">Contact Us</a>
+                <span>|</span>
+                <a href="tel:+1234567890">+123 456 7890</a>
+            </div>
+        </div>
+
+
     </div>
     
   )

@@ -6,7 +6,7 @@ export default function Body({perfumesList}) {
 
     
   return (
-    <div className='body'>
+    <div className='body container'>
       <div>
         <ul className='perfume_list'>
           {perfumesList.map((item, index) => (

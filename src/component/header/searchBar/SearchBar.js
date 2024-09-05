@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 
 const SearchBar = ({ category,value }) => {
-  console.log("value",value)
   let searchTerm="";
 
   return (
-    <div>
+    <div className='search-input'>
       <input
         type="text"
         placeholder="Search..."

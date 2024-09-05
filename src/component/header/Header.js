@@ -2,8 +2,9 @@ import React from 'react'
 import "./header.css"
 import SearchBar from './searchBar/SearchBar.js';
 import Logo from '../logo/Logo';
+import DropdownMenu from './DropdownMenu.js';
 
-export default function Header({category,written}) {
+export default function Header({category,written,subjects}) {
 
   return (
     <div className='header'>
@@ -14,15 +15,13 @@ export default function Header({category,written}) {
             <a href="#"> <Logo/></a>
         </div>
         <div class="header-items">
-            <div class="search-bar">
-                <SearchBar className='searchBar' category={category} value={written} placeholder="b"/>
-            </div>
-            <div class="filter">
-                <select>
-                    <option value="">Filter</option>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                </select>
+            <div className='Search'>
+                <div class="search-bar">
+                    <SearchBar className='searchBar' category={category} value={written} placeholder="b"/>
+                </div>
+                <div class="filter">
+                    <DropdownMenu subject={subjects}/>
+                </div>
             </div>
             <div class="contact-info">
                 <a href="mailto:contact@example.com">Contact Us</a>
@@ -30,6 +29,7 @@ export default function Header({category,written}) {
                 <a href="tel:+1234567890">+123 456 7890</a>
             </div>
         </div>
+        
 
 
     </div>

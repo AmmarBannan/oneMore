@@ -1,27 +1,40 @@
+@import '../../variable.css';
+
 .header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #333;
+    background-color: var(--primary-color);
     color: #fff;
     width: 100%;
 }
 
+.logo{
+    width: 30%;
+}
 .logo a {
     color: #fff;
     text-decoration: none;
     font-size: 24px;
 }
 
+
 .header-items {
     display: flex;
     align-items: center;
+    width: 55%;
+    justify-content: space-around;
 }
+.Search{
+    display: flex;
 
+}
 .search-bar {
     margin-right: 20px;
 }
+search-input{
 
+}
 .search-bar input {
     padding: 5px;
     font-size: 16px;

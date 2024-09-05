@@ -6,6 +6,10 @@
     border-radius: 7px;
     height: fit-content;
     padding: 3%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 

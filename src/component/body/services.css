@@ -1,0 +1,60 @@
+@import '../../variable.css';
+
+.services {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    width: 100%;
+}
+
+.services h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.services-slider {
+    display: flex;
+    padding-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.service {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 0 10px 10px 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service h3 {
+    font-size: 1.5em;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1em;
+    color: #666;
+}
+
+.service:hover {
+    transform: scale(1.05);
+}
+
+/* Optional: Hide scrollbar for WebKit and Firefox */
+.services-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.services-slider {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

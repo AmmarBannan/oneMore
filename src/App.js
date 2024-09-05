@@ -10,14 +10,11 @@ import { useState } from 'react';
 
 function App() {
   const category = [
-    'Apple',
-    'Banana',
-    'Orange',
-    'Mango',
-    'Pineapple',
-    'Strawberry',
-    'Blueberry',
+    'Apple','Banana','Orange','Mango','Pineapple','Strawberry','Blueberry',
   ];
+  const pCompany=[
+    'Ajmal', 'Lattafa', 'Taif Al Emarat', 'Al Haramain', 'Naseem Perfumes', 'Abdul Samad Al Qurashi', 'Rasasi'
+  ]
  
   const [filter,setFilter]= useState("");
   const filterQuery=(word)=>{
@@ -28,11 +25,11 @@ function App() {
   const filteredList = category.filter(item =>
     item.toLowerCase().includes(filter.toLowerCase())
   );
-  console.log("filteredItems",filter)
+ 
   return (
     <div className="App">
-      <Header category={filterQuery} written={filter}/>
-      <Body perfumesList={filteredList} />
+      <Header category={filterQuery} written={filter} subjects={pCompany}/>
+      <Body perfumesList={filteredList} onSearch={filter}/>
       <Footer/>
     </div>
   );

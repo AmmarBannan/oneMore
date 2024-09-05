@@ -1,11 +1,11 @@
-
+@import '../../variable.css';
 .content {
     padding: 20px;
 }
 
 /* Footer styles */
 .footer {
-    background-color: #333;
+    background-color: var(--primary-color);
     color: #fff;
     padding: 20px;
     position: relative;

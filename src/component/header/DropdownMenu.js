@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './DropdownMenu.css';
 
-const DropdownMenu = ({subject}) => {
+const DropdownMenu = ({subject,setfilterListFun}) => {
   // State to track whether the dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,7 +10,7 @@ const DropdownMenu = ({subject}) => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  console.log("ds",subject["br"])
+
   return (
     <div className="dropdown">
       <button className="dropdown-button" onClick={toggleDropdown}>
@@ -19,14 +19,20 @@ const DropdownMenu = ({subject}) => {
       
       {/* Conditionally render the dropdown items */}
       {isOpen && (
-
-        <ul className="dropdown-menu">
-          <h3>Brands</h3>
-          {subject["br"].map((company,index)=>(
-            <li className="dropdown-item" key={index}>{company}</li>
-          ))}
-          
-        </ul>
+        <div className='dropdown-menu'>
+          <ul className="dropdown_list brand">
+            <h3>Brands</h3>
+            {subject["br"].map((brand,index)=>(
+              <li className="dropdown-item" key={index} onClick={() => setfilterListFun("brand",brand)}>{brand}</li>
+            ))}
+          </ul>
+          <ul className="dropdown_list gender">
+            <h3>Gender</h3>
+            {subject["gender"].map((gender,index)=>(
+              <li className="dropdown-item" key={index} onClick={() => setfilterListFun("gender",gender)}>{gender}</li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

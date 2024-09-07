@@ -4,7 +4,7 @@ import SearchBar from './searchBar/SearchBar.js';
 import Logo from '../logo/Logo';
 import DropdownMenu from './DropdownMenu.js';
 
-export default function Header({category,written,subjects}) {
+export default function Header({category,written,subjects,setfilterListFun}) {
 
   return (
     <div className='header'>
@@ -20,7 +20,7 @@ export default function Header({category,written,subjects}) {
                     <SearchBar className='searchBar' category={category} value={written} placeholder="b"/>
                 </div>
                 <div class="filter">
-                    <DropdownMenu subject={subjects}/>
+                    <DropdownMenu subject={subjects} setfilterListFun={setfilterListFun}/>
                 </div>
             </div>
             <div class="contact-info">

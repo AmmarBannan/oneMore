@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './DropdownMenu.css';
 
-const DropdownMenu = ({subject,setfilterListFun}) => {
+const DropdownMenu = ({subject,setFilterListFun}) => {
   // State to track whether the dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,13 +23,13 @@ const DropdownMenu = ({subject,setfilterListFun}) => {
           <ul className="dropdown_list brand">
             <h3>Brands</h3>
             {subject["br"].map((brand,index)=>(
-              <li className="dropdown-item" key={index} onClick={() => setfilterListFun("brand",brand)}>{brand}</li>
+              <li className="dropdown-item" key={index} onClick={() => setFilterListFun("brand",brand)}>{brand}</li>
             ))}
           </ul>
           <ul className="dropdown_list gender">
             <h3>Gender</h3>
             {subject["gender"].map((gender,index)=>(
-              <li className="dropdown-item" key={index} onClick={() => setfilterListFun("gender",gender)}>{gender}</li>
+              <li className="dropdown-item" key={index} onClick={() => setFilterListFun("gender",gender)}>{gender}</li>
             ))}
           </ul>
         </div>

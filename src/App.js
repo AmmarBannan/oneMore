@@ -23,12 +23,13 @@ function App() {
   }
   const [searchTerm, setSearchTerm] = useState('');
 
-  const [filterList, setfilterList] = useState({brand:[],"gender":[]});
+  const [filterList, setFilterList] = useState({brand:["LV"],"gender":[]});
 
-  const setfilterListfun=(cat,val)=>{
-    setfilterList(prevState => ({
-      ...prevState,        // Spread the previous state to keep all other values unchanged
-      cat: filterList[cat].push(val) // Update only the occupation field
+  const setFilterListFun=(cat,val)=>{
+    console.log("te",filterList)
+    setFilterList(filterList => ({
+      ...filterList,        // Spread the previous state to keep all other values unchanged
+      cat:[...filterList[cat],val] // Update only the occupation field
     }));
   }
   console.log("filterList",filterList)
@@ -39,8 +40,8 @@ function App() {
  
   return (
     <div className="App">
-      <Header category={filterQuery} written={filter} subjects={{br:brand,gender:gender}} setfilterListFun={setfilterListfun}/>
-      <Body perfumesList={filteredList} onSearch={filter}/>
+      <Header category={filterQuery} written={filter} subjects={{br:brand,gender:gender}} setFilterListFun={setFilterListFun}/>
+      <Body perfumesList={filteredList} onSearch={filter} searchTermList={filterList} />
       <Footer/>
     </div>
   );

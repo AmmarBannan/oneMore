@@ -3,36 +3,43 @@ import "./header.css"
 import SearchBar from './searchBar/SearchBar.js';
 import Logo from '../logo/Logo';
 import DropdownMenu from './DropdownMenu.js';
+import {PopUpfilter,setFilterListFun } from './popUpfilter.js';
 
-export default function Header({category,written,subjects,setFilterListFun}) {
+
+export default function Header({filterQuery,written,filterOption,filter}) {
+
+    const changeFilter = (cat, val) => {
+        setFilterListFun(filter.get,filter.set, cat, val);
+      };
+
 
   return (
-    <div className='header'>
+    <header className='header'>
       
-      
-
-        <div class="logo">
+        <div className="logo">
             <a href="#"> <Logo/></a>
         </div>
-        <div class="header-items">
+        <div className="header-items">
             <div className='Search'>
-                <div class="search-bar">
-                    <SearchBar className='searchBar' category={category} value={written} placeholder="b"/>
+                <div className="search-bar">
+                    <SearchBar className='searchBar' filterQuery={filterQuery} value={written} placeholder="b"/>
                 </div>
-                <div class="filter">
-                    <DropdownMenu subject={subjects} setFilterListFun={setFilterListFun}/>
+                <div className="filter">
+                    <DropdownMenu filterOption={filterOption} changeFilter={changeFilter} filter={filter}/>
                 </div>
             </div>
-            <div class="contact-info">
+            <div className="contact-info">
                 <a href="mailto:contact@example.com">Contact Us</a>
                 <span>|</span>
                 <a href="tel:+1234567890">+123 456 7890</a>
             </div>
         </div>
+
+        < PopUpfilter slectedTerm={filter}/>
         
 
 
-    </div>
+    </header>
     
   )
 }

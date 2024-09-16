@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-const SearchBar = ({ category,value }) => {
+const SearchBar = ({ filterQuery,value }) => {
   let searchTerm="";
 
   return (
@@ -11,7 +11,7 @@ const SearchBar = ({ category,value }) => {
         type="text"
         placeholder="Search..."
         value={value}
-        onChange={(e) => category(e.target.value)}
+        onChange={(e) => filterQuery(e.target.value)}
       />
     </div>
   );

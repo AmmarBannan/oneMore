@@ -1,48 +1,44 @@
 import './App.css';
-import './component/header/Header.js'
-import Header from './component/header/Header.js';
-import './component/body/Body.js';
-import Body from './component/body/Body.js';
-import './component/footer/Footer.js';
-import Footer from './component/footer/Footer.js';
+import Header from './component/header/Header';
+import Body from './component/body/Body';
+import Footer from './component/footer/Footer';
 import { useState } from 'react';
 
-
 function App() {
-  const category = [
-    'Apple','Banana','Orange','Mango','Pineapple','Strawberry','Blueberry',
-  ];
-  const brand=[
-    'Ajmal', 'Lattafa', 'Taif Al Emarat', 'Al Haramain', 'Naseem Perfumes', 'Abdul Samad Al Qurashi', 'Rasasi'
-  ]
-  const gender=['male','female','unisex']
+  const category = ['Apple', 'Banana', 'Orange', 'Mango', 'Pineapple', 'Strawberry', 'Blueberry'];
+  
+  const brand = new Set(['Ajmal', 'Lattafa', 'Taif Al Emarat', 'Al Haramain', 'Naseem Perfumes', 'Abdul Samad Al Qurashi', 'Rasasi']);
+  const gender = new Set(['male', 'female', 'unisex']);
  
-  const [filter,setFilter]= useState("");
-  const filterQuery=(word)=>{
+  const [filter, setFilter] = useState('');
+  const [filterList, setFilterList] = useState({ brand: [], gender: [] });
+
+  // Function to update filter (for search)
+  const filterQuery = (word) => {
     setFilter(word);
-  }
-  const [searchTerm, setSearchTerm] = useState('');
+    console.log("filter", word);
+  };
 
-  const [filterList, setFilterList] = useState({brand:["LV"],"gender":[]});
-
-  const setFilterListFun=(cat,val)=>{
-    console.log("te",filterList)
-    setFilterList(filterList => ({
-      ...filterList,        // Spread the previous state to keep all other values unchanged
-      cat:[...filterList[cat],val] // Update only the occupation field
-    }));
-  }
-  console.log("filterList",filterList)
- 
-  const filteredList = category.filter(item =>
+  // Filter perfumes list based on search and selected filters
+  const filteredList = category.filter(item => 
     item.toLowerCase().includes(filter.toLowerCase())
   );
- 
+
   return (
     <div className="App">
-      <Header category={filterQuery} written={filter} subjects={{br:brand,gender:gender}} setFilterListFun={setFilterListFun}/>
-      <Body perfumesList={filteredList} onSearch={filter} searchTermList={filterList} />
-      <Footer/>
+ 
+        <Header 
+          filterQuery={filterQuery} 
+          written={filter} 
+          filterOption={{ brand, gender }} 
+          filter={{ get: filterList, set: setFilterList }} 
+        />
+        <Body 
+          perfumesList={filteredList} 
+          onSearch={filter} 
+          searchTermList={filterList} 
+        />
+        <Footer />
     </div>
   );
 }

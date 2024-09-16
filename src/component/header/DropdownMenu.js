@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './DropdownMenu.css';
 
-const DropdownMenu = ({subject,setFilterListFun}) => {
+const DropdownMenu = ({filterOption,changeFilter,filter}) => {
   // State to track whether the dropdown is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,14 +22,29 @@ const DropdownMenu = ({subject,setFilterListFun}) => {
         <div className='dropdown-menu'>
           <ul className="dropdown_list brand">
             <h3>Brands</h3>
-            {subject["br"].map((brand,index)=>(
-              <li className="dropdown-item" key={index} onClick={() => setFilterListFun("brand",brand)}>{brand}</li>
+             {/* Convert Set to Array before mapping */}
+             {Array.from(filterOption["brand"]).map((brand, index) => (
+
+              <li 
+
+                className={`dropdown-item ${Array.from(filter.get["brand"]).includes(brand) ? 'selected' : 'removed'}`} 
+                key={index} 
+                onClick={() => changeFilter("brand", brand)}
+              >
+                {brand}
+              </li>
             ))}
           </ul>
           <ul className="dropdown_list gender">
             <h3>Gender</h3>
-            {subject["gender"].map((gender,index)=>(
-              <li className="dropdown-item" key={index} onClick={() => setFilterListFun("gender",gender)}>{gender}</li>
+            {Array.from(filterOption["gender"]).map((gender, index) => (
+              <li 
+                className="dropdown-item" 
+                key={index} 
+                onClick={() => changeFilter("gender", gender)}
+              >
+                {gender}
+              </li>
             ))}
           </ul>
         </div>

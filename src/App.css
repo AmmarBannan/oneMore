@@ -9,6 +9,10 @@
   padding-top: 10px;
   margin: 0;
     font-family: Arial, sans-serif;
+    padding: 20px;
+}
+head,main,footer{
+  width: 90%;
 }
 
 
